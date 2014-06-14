@@ -1,0 +1,12 @@
+development:
+  adapter: postgresql
+  min_messages: warning
+  database: Memory_development
+test:
+  adapter: postgresql
+  min_messages: warning
+  database: Memory_test
+production:
+  adapter: postgresql
+  min_messages: warning
+  database: Memory_production
