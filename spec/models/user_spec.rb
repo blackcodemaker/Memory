@@ -1,15 +1,15 @@
 require "spec_helper"
 
-describe User, :type => :model do
+describe User do
   describe "associations" do
     it { should have_one(:user_settings) }
   end
 
-	describe "validations" do
+  describe "validations" do
     it { should validate_presence_of :email }
-		it { should validate_presence_of :password }
-		it { should validate_confirmation_of :password }
-	end
+    it { should validate_presence_of :password }
+    it { should validate_confirmation_of :password }
+  end
 
   describe "#full_name" do
     let(:first_name) { "James" }

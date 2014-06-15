@@ -1,0 +1,94 @@
+StringLiterals:
+  EnforcedStyle: double_quotes
+
+LineLength:
+  Max: 80
+
+# When using conditionals in assignment, the `end` should align with the
+# beginning of the variable, not the `if`
+EndAlignment:
+  AlignWith: variable
+
+# We don't enforce naming conventions on single line block params
+SingleLineBlockParams:
+  Enabled: false
+
+# This one barfs on class DSLs that wrap, like so:
+# delegate :blah, :blah, :blah
+#   to: :blah
+# and we tend to do that a lot.
+# There's a hash alignment one that barfs on similar uses where the method takes
+# an options hash. We should probably start using our regular method call style
+# rules whether its called in the class or on an instance.
+# TODO: Need to add an option that doesn't offend on Class DSLs
+#   https://github.com/bbatsov/rubocop/issues/687
+AlignParameters:
+  Enabled: false
+AlignHash:
+  Enabled: false
+
+# We leave dots on the end of the line when chaining across lines
+# Tried to use the `trailing` config for this but it was complaining
+# about things like the last line of a multiline method call: `).transfer`
+# TODO: Looks like `trailing` is too finicky to use right now
+DotPosition:
+  Enabled: false
+  # Style: trailing
+
+# TODO: Temporarily disabled during transition to avoid refactoring overhead
+MethodLength:
+  Enabled: false
+
+# TODO: Temporarily disabled during transition to avoid refactoring overhead
+CyclomaticComplexity:
+  Enabled: false
+
+# TODO: This might be a good one to add back in at some point?
+# * If we consider adding this, do some experimentation to see what length is
+#   good for us.
+# * Start with this on in a new project, when you hit the violation check if
+#   the offending code actually has too many concerns. If not, bump the max
+ClassLength:
+  Enabled: false
+
+# Was offending when the method was aliasing, not a simple attr_reader
+# See InitialTrayRequestsController::Creator#new_user?
+TrivialAccessors:
+  Enabled: false
+
+# % syntax for string interpolation is nifty, why not use it?
+FavorSprintf:
+  Enabled: false
+
+# Why use `fail` instead of `raise`?
+SignalException:
+  Enabled: false
+
+# I am in favor of assignment in condition. Up for discussion.
+AssignmentInCondition:
+  Enabled: false
+
+# Not a part of our coding conventions
+Documentation:
+  Enabled: false
+
+# This was offending for a custom method called `collect` not on an `Enumerable`
+CollectionMethods:
+  Enabled: false
+
+# Cuz we don't use any fancy characters anyway + we're moving to Ruby 2.0
+Encoding:
+  Enabled: false
+
+# Enforce trailing comma for multiline collections
+TrailingComma:
+  EnforcedStyleForMultiline: comma
+
+# I just don't care so much about clean specs.. Like short methods and short lines
+AllCops:
+  Excludes:
+    - spec/** # TODO: Can we exclude this only from certain cops?
+    - config/**
+    - bin/**
+    - db/**
+    - script/**

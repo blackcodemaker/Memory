@@ -7,7 +7,6 @@ FactoryGirl.define do
     spaced_time_interval_minutes 60
   end
 
-
   factory :user_settings do
   end
 end
