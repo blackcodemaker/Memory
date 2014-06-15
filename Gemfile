@@ -9,7 +9,7 @@ gem "sass-rails", "~> 4.0.3"
 gem "uglifier", "~> 2.5.0"
 gem "coffee-rails", "~> 4.0.1"
 gem "jquery-rails", "~> 3.1.0"
-gem 'bootstrap' 
+gem "bootstrap"
 # gem "jquery-ui-rails", "~> 4.2.1"
 # gem "foundation-rails", "~> 5.2.2.0"
 # gem "high_voltage", "~> 2.1.0"
@@ -40,6 +40,8 @@ gem "sidekiq", "~> 3.1.3"
 gem "chronic", "~> 0.10.2"
 # gem "smarter_csv", "~> 1.0.17"
 # gem "valid_email", "~> 0.0.5"
+gem "draper", "~> 1.3.0"
+
 
 # gem "rails-assets-underscore", "~> 1.6.0"
 # gem "rails-assets-backbone", "~> 1.1.2"
@@ -69,12 +71,12 @@ end
 
 group :development, :test do
   gem "spring-commands-rspec", "~> 1.0.2"
-  gem "guard-rspec", "~> 4.2.8", require: false
+  gem "guard-rspec", require: false
   gem "debugger", "~> 1.6.6"
   gem "pry", "~> 0.9.12.6"
   gem "pry-rails", "~> 0.3.2"
   gem "pry-debugger", "~> 0.2.2"
-  gem "rspec-rails"
+  gem "rspec-rails", "~> 2.14.2"
   gem "factory_girl_rails", "~> 4.4.1"
   # gem "rubocop", "~> 0.21.0"
   gem "dotenv-rails", "~> 0.11.1"
