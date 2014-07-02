@@ -43,6 +43,7 @@ gem "chronic", "~> 0.10.2"
 
 # gem "rails-assets-underscore", "~> 1.6.0"
 # gem "rails-assets-backbone", "~> 1.1.2"
+gem "figaro"
 
 group :development do
   gem "quiet_assets", "~> 1.0.2"
